@@ -1,0 +1,27 @@
+#hero {
+display: block;
+margin: 0;
+font-weight: 150px!important;
+}
+
+#search-title {
+    margin-left: 20px;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#searchBar {
+  height: 100%;
+  width: 50%;
+  top: 0;
+  overflow-x: hidden;
+}
+
+#enterCity {
+  margin-left: 10px;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  overflow-x: hidden;
+    
+}
