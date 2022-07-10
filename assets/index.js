@@ -1,4 +1,4 @@
-
+// add on click event listener
 $("#searchBtn").on("click", function(event) {
     event.preventDefault();
 
