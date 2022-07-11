@@ -47,13 +47,17 @@ A simple interfaced weather dashboard with form inputs and feautures a dynamical
 * Moment.js
 * Server-Side API - OpenWeather API
 
-## Repo
-https://github.com/Summerjay0401/quiz-app-using-jquery
+## GitHub Repo
+https://github.com/Summerjay0401/weather-dashboard-server-side-api.git
 
 ## GitHub Pages
+https://summerjay0401.github.io/weather-dashboard-server-side-api/
+
+## SCREENSHOT
+![Screenhot!](./assets/screenrecording/weather-dashboard-screenshot.png)
 
 ## DEMO
-![Weather Dashboard in Action!](./assets/screenrecording/Screen%20Recording%202022-07-10%20at%2011.09.01%20PM.gif)
+![Weather Dashboard in Action!](./assets/screenrecording/weather-dashboard.gif)
 
 - - -
 
