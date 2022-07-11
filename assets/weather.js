@@ -64,7 +64,25 @@ function currentCondition(city) {
 
             futureCondition(lat, lon);
 
-            // function for future condition
+            // WHEN I view the UV index
+            // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+            // 0-2 green#3EA72D, 3-5 yellow#FFF300, 6-7 orange#F18B00, 8-10 red#E53210, 11+violet#B567A4
+            if (uvIndex >= 0 && uvIndex <= 2) {
+                $("#uvIndexColor").css("background-color", "#3EA72D").css("color", "white");
+            } else if (uvIndex >= 3 && uvIndex <= 5) {
+                $("#uvIndexColor").css("background-color", "#FFF300");
+            } else if (uvIndex >= 6 && uvIndex <= 7) {
+                $("#uvIndexColor").css("background-color", "#F18B00");
+            } else if (uvIndex >= 8 && uvIndex <= 10) {
+                $("#uvIndexColor").css("background-color", "#E53210").css("color", "white");
+            } else {
+                $("#uvIndexColor").css("background-color", "#B567A4").css("color", "white"); 
+            };  
+        });
+    });
+}
+
+// function for future condition
 function futureCondition(lat, lon) {
 
     // THEN I am presented with a 5-day forecast
@@ -110,22 +128,4 @@ function futureCondition(lat, lon) {
             $("#fiveDay").append(futureCard);
         }
     }); 
-}
-
-            // WHEN I view the UV index
-            // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-            // 0-2 green#3EA72D, 3-5 yellow#FFF300, 6-7 orange#F18B00, 8-10 red#E53210, 11+violet#B567A4
-            if (uvIndex >= 0 && uvIndex <= 2) {
-                $("#uvIndexColor").css("background-color", "#3EA72D").css("color", "white");
-            } else if (uvIndex >= 3 && uvIndex <= 5) {
-                $("#uvIndexColor").css("background-color", "#FFF300");
-            } else if (uvIndex >= 6 && uvIndex <= 7) {
-                $("#uvIndexColor").css("background-color", "#F18B00");
-            } else if (uvIndex >= 8 && uvIndex <= 10) {
-                $("#uvIndexColor").css("background-color", "#E53210").css("color", "white");
-            } else {
-                $("#uvIndexColor").css("background-color", "#B567A4").css("color", "white"); 
-            };  
-        });
-    });
 }

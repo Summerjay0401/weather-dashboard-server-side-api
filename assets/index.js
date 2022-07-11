@@ -4,7 +4,6 @@ $("#searchBtn").on("click", function(event) {
 
     let city = $("#enterCity").val().trim();
     currentCondition(city);
-    console.log (searchHistoryList, city, !searchHistoryList.includes(city));
     if (!searchHistoryList.includes(city)) {
         searchHistoryList.push(city);
         let searchedCity = $(`
@@ -14,14 +13,14 @@ $("#searchBtn").on("click", function(event) {
     };
 
     localStorage.setItem("city", JSON.stringify(searchHistoryList));
-    console.log(searchHistoryList);
-    });
+});
 
 //WHEN I click on a city in the search history
 //THEN I am again presented with current and future conditions for that city
 
-$(document).on("click", "list-group-item", function() {
+$(document).on("click", ".list-group-item", function() {
     let listCity = $(this).text();
+    console.log(listCity);
     currentCondition(listCity);
 });
 
