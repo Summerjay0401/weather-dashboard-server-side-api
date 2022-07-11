@@ -16,8 +16,8 @@ function currentCondition(city) {
         $("#weatherContent").css("display", "block");
         $("#cityDetail").empty();
         
-        var iconCode = cityWeatherResponse.weather[0].icon;
-        var iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
+        let iconCode = cityWeatherResponse.weather[0].icon;
+        let iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
 
 
         // WHEN I view current weather conditions for that city
@@ -27,7 +27,7 @@ function currentCondition(city) {
         // the temperature
         // the humidity
         // the wind speed
-        var currentCity = $(`
+        let currentCity = $(`
             <h2 id="currentCity">
                 ${cityWeatherResponse.name} ${today} <img src="${iconURL}" alt="${cityWeatherResponse.weather[0].description}" />
             </h2>
@@ -39,9 +39,9 @@ function currentCondition(city) {
         $("#cityDetail").append(currentCity);
 
         // UV index
-        var lat = cityWeatherResponse.coord.lat;
-        var lon = cityWeatherResponse.coord.lon;
-        var uviQueryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        let lat = cityWeatherResponse.coord.lat;
+        let lon = cityWeatherResponse.coord.lon;
+        const uviQueryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
         $.ajax({
             url: uviQueryURL,
@@ -49,8 +49,8 @@ function currentCondition(city) {
         }).then(function(uviResponse) {
             console.log(uviResponse);
 
-            var uvIndex = uviResponse.value;
-            var uvIndexP = $(`
+            let uvIndex = uviResponse.value;
+            let uvIndexP = $(`
                 <p>UV Index: 
                     <span id="uvIndexColor" class="px-2 py-2 rounded">${uvIndex}</span>
                 </p>
