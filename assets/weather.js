@@ -1,5 +1,6 @@
 const apiKey = "d1e2d0763204896fd894698f5c6e27ee";
 const today = moment().format('L');
+const day = moment().format('dddd');
 let searchHistoryList = [];
 
 // function for current condition
@@ -29,8 +30,11 @@ function currentCondition(city) {
         // the wind speed
         let currentCity = $(`
             <h2 id="currentCity">
-                ${cityWeatherResponse.name} ${today} <img src="${iconURL}" alt="${cityWeatherResponse.weather[0].description}" />
+                ${cityWeatherResponse.name} <img src="${iconURL}" alt="${cityWeatherResponse.weather[0].description}" />
             </h2>
+            <h3 id="currentDay">
+                ${day} ${today} 
+            </h3>
             <p>Temperature: ${cityWeatherResponse.main.temp} °F</p>
             <p>Humidity: ${cityWeatherResponse.main.humidity}\%</p>
             <p>Wind Speed: ${cityWeatherResponse.wind.speed} MPH</p>
@@ -81,18 +85,20 @@ function futureCondition(lat, lon) {
                 humidity: futureResponse.daily[i].humidity
             };
 
-            var currDate = moment.unix(cityInfo.date).format("MM/DD/YYYY");
-            var iconURL = `<img src="https://openweathermap.org/img/w/${cityInfo.icon}.png" alt="${futureResponse.daily[i].weather[0].main}" />`;
+            let currDate = moment.unix(cityInfo.date).format("MM/DD/YYYY");
+            let currDay = moment.unix(cityInfo.date).format('dddd')
+            let iconURL = `<img src="https://openweathermap.org/img/w/${cityInfo.icon}.png" alt="${futureResponse.daily[i].weather[0].main}" />`;
 
             // displays the date
             // an icon representation of weather conditions
             // the temperature
             // the humidity
-            var futureCard = $(`
+            let futureCard = $(`
                 <div class="pl-3">
                     <div class="card pl-3 pt-3 mb-3 bg-primary text-light" style="width: 12rem;>
                         <div class="card-body">
                             <h5>${currDate}</h5>
+                            <h5>${currDay}</h5>
                             <p>${iconURL}</p>
                             <p>Temp: ${cityInfo.temp} °F</p>
                             <p>Humidity: ${cityInfo.humidity}\%</p>
