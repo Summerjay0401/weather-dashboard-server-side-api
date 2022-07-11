@@ -4,12 +4,13 @@ $("#searchBtn").on("click", function(event) {
 
     let city = $("#enterCity").val().trim();
     currentCondition(city);
+    console.log (searchHistoryList, city, !searchHistoryList.includes(city));
     if (!searchHistoryList.includes(city)) {
         searchHistoryList.push(city);
         let searchedCity = $(`
             <li class="list-group-item">${city}</li>
         `);
-        $("searchHistory").append(searchedCity);
+        $("#searchHistory").append(searchedCity);
     };
 
     localStorage.setItem("city", JSON.stringify(searchHistoryList));

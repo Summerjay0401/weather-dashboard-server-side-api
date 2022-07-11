@@ -2,26 +2,77 @@
 display: block;
 margin: 0;
 font-weight: 150px!important;
+justify-content: center!important;
+background-color: linen!important;
+opacity: 0.3!important;
 }
 
-#search-title {
-    margin-left: 20px;
-    font-size: larger;
-    font-weight: bolder;
+#hero h1 {
+  color: black !important;
+  text-align: center;
 }
 
-#searchBar {
-  height: 100%;
-  width: 50%;
-  top: 0;
-  overflow-x: hidden;
+h1 {
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #181830;
+}
+
+h4 {
+  margin: 20px;
 }
 
 #enterCity {
-  margin-left: 10px;
-  height: 100%;
-  width: 50%;
-  top: 0;
-  overflow-x: hidden;
-    
+  margin-left: 20px;
+}
+
+#weatherContent {
+  display: none;
+  background-color: white;
+}
+
+#cityDetail {
+  border: solid black 1px;
+}
+
+#cityDetail,
+#uvIndexColor,
+li {
+    color: black!important;
+}
+
+#searchResults,
+#cityDetail,
+.card {
+    background-color: white!important;
+}
+
+#searchResults {
+    height: 100vh;
+}
+
+#fiveDay .card {
+    border: 1px solid black!important;
+}
+
+#searchHistory li {
+    background-color: transparent;
+    color: black!important;
+    margin-left: 10px;
+}
+
+p {
+    color: black!important;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black!important;
+}
+
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: antiquewhite;
 }
